@@ -104,13 +104,19 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 
   uint16_t ccr = 0;
+  uint16_t ccr2 = 0;
 
   while (1)
   {
+
 	  __HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, ccr);  //메크로 함수
+	  __HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, ccr2);
 	  ccr += 1000;
+	  ccr2 += 500;
 	  if (ccr > TIM4->ARR ) ccr = 0;
+	  if (ccr2 > TIM4->ARR) ccr2 = 0;
 	  HAL_Delay(50);
+
 
     /* USER CODE END WHILE */
 
