@@ -111,7 +111,7 @@ int main(void)
   while (1)
   {
 
-	  __HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, ccr);  //메크�? ?��?��
+	  __HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, ccr);  //메크�?? ?��?��
 	  //__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, ccr2);
 	  TIM4->CCR2 = ccr2;
 	  ccr += 1000;
