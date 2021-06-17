@@ -88,6 +88,7 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM3_Init();
   MX_TIM4_Init();
+  MX_TIM10_Init();
   /* USER CODE BEGIN 2 */
 
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
@@ -98,6 +99,7 @@ int main(void)
   HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_2);
   HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
 
+  HAL_TIM_PWM_Start(&htim10, TIM_CHANNEL_1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -109,8 +111,9 @@ int main(void)
   while (1)
   {
 
-	  __HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, ccr);  //ë©”í¬ë¡? ?•¨?ˆ˜
-	  __HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, ccr2);
+	  __HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, ccr);  //ë©”í¬ï¿½? ?ï¿½ï¿½?ï¿½ï¿½
+	  //__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, ccr2);
+	  TIM4->CCR2 = ccr2;
 	  ccr += 1000;
 	  ccr2 += 500;
 	  if (ccr > TIM4->ARR ) ccr = 0;
