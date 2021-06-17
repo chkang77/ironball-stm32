@@ -109,7 +109,7 @@ int main(void)
   while (1)
   {
 
-	  __HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, ccr);  //ыйФэБмыбЬ эХиьИШ
+	  __HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, ccr);  //ыйФэБмыб? ?Хи?ИШ
 	  __HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_2, ccr2);
 	  ccr += 1000;
 	  ccr2 += 500;
